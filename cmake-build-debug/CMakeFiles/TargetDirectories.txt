@@ -1,0 +1,3 @@
+/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles/DS_ALGS_CODING_HW.dir
+/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles/edit_cache.dir
