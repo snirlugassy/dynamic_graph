@@ -8,13 +8,13 @@
 template <typename T>
 class ListNode {
 public:
-    ListNode(T* element);
-    T* element = nullptr;
+    ListNode(T &element);
+    T element = nullptr;
     ListNode *next = nullptr;
     ListNode *prev = nullptr;
 };
 
 template <typename T>
-ListNode<T>::ListNode(T *element): element(element) {};
+ListNode<T>::ListNode(T &element): element(element) {};
 
 #endif //DS_ALGS_CODING_HW_LISTNODE_H

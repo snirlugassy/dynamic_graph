@@ -4,6 +4,8 @@
 
 #include "Graph_Node.h"
 
+Graph_Node::Graph_Node(unsigned int id): _id(id) {}
+
 void Graph_Node::insert_out_node(Graph_Node *node) {
     _out_nodes.push_back(node);
 }

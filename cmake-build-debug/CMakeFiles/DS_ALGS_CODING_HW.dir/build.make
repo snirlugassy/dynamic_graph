@@ -43,10 +43,10 @@ RM = /opt/clion-2019.3.2/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/snirlugassy/Projects/DS_ALGS_CODING_HW
+CMAKE_SOURCE_DIR = /home/snirlugassy/ds_algs_dynamic_graph
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug
+CMAKE_BINARY_DIR = /home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/DS_ALGS_CODING_HW.dir/depend.make
@@ -59,81 +59,81 @@ include CMakeFiles/DS_ALGS_CODING_HW.dir/flags.make
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.o: CMakeFiles/DS_ALGS_CODING_HW.dir/flags.make
 CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.o -c /home/snirlugassy/Projects/DS_ALGS_CODING_HW/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.o -c /home/snirlugassy/ds_algs_dynamic_graph/main.cpp
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snirlugassy/Projects/DS_ALGS_CODING_HW/main.cpp > CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snirlugassy/ds_algs_dynamic_graph/main.cpp > CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.i
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snirlugassy/Projects/DS_ALGS_CODING_HW/main.cpp -o CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snirlugassy/ds_algs_dynamic_graph/main.cpp -o CMakeFiles/DS_ALGS_CODING_HW.dir/main.cpp.s
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.o: CMakeFiles/DS_ALGS_CODING_HW.dir/flags.make
 CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.o: ../Graph_Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.o -c /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Graph_Node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.o -c /home/snirlugassy/ds_algs_dynamic_graph/Graph_Node.cpp
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Graph_Node.cpp > CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snirlugassy/ds_algs_dynamic_graph/Graph_Node.cpp > CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.i
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Graph_Node.cpp -o CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snirlugassy/ds_algs_dynamic_graph/Graph_Node.cpp -o CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Node.cpp.s
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.o: CMakeFiles/DS_ALGS_CODING_HW.dir/flags.make
 CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.o: ../Graph_Edge.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.o -c /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Graph_Edge.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.o -c /home/snirlugassy/ds_algs_dynamic_graph/Graph_Edge.cpp
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Graph_Edge.cpp > CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snirlugassy/ds_algs_dynamic_graph/Graph_Edge.cpp > CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.i
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Graph_Edge.cpp -o CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snirlugassy/ds_algs_dynamic_graph/Graph_Edge.cpp -o CMakeFiles/DS_ALGS_CODING_HW.dir/Graph_Edge.cpp.s
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.o: CMakeFiles/DS_ALGS_CODING_HW.dir/flags.make
 CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.o: ../Rooted_Tree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.o -c /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Rooted_Tree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.o -c /home/snirlugassy/ds_algs_dynamic_graph/Rooted_Tree.cpp
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Rooted_Tree.cpp > CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snirlugassy/ds_algs_dynamic_graph/Rooted_Tree.cpp > CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.i
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Rooted_Tree.cpp -o CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snirlugassy/ds_algs_dynamic_graph/Rooted_Tree.cpp -o CMakeFiles/DS_ALGS_CODING_HW.dir/Rooted_Tree.cpp.s
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.o: CMakeFiles/DS_ALGS_CODING_HW.dir/flags.make
 CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.o: ../Tree_Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.o -c /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Tree_Node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.o -c /home/snirlugassy/ds_algs_dynamic_graph/Tree_Node.cpp
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Tree_Node.cpp > CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snirlugassy/ds_algs_dynamic_graph/Tree_Node.cpp > CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.i
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Tree_Node.cpp -o CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snirlugassy/ds_algs_dynamic_graph/Tree_Node.cpp -o CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.s
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o: CMakeFiles/DS_ALGS_CODING_HW.dir/flags.make
 CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o: ../Dynamic_Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o -c /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Dynamic_Graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o -c /home/snirlugassy/ds_algs_dynamic_graph/Dynamic_Graph.cpp
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Dynamic_Graph.cpp > CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/snirlugassy/ds_algs_dynamic_graph/Dynamic_Graph.cpp > CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.i
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snirlugassy/Projects/DS_ALGS_CODING_HW/Dynamic_Graph.cpp -o CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/snirlugassy/ds_algs_dynamic_graph/Dynamic_Graph.cpp -o CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.s
 
 # Object files for target DS_ALGS_CODING_HW
 DS_ALGS_CODING_HW_OBJECTS = \
@@ -155,7 +155,7 @@ DS_ALGS_CODING_HW: CMakeFiles/DS_ALGS_CODING_HW.dir/Tree_Node.cpp.o
 DS_ALGS_CODING_HW: CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o
 DS_ALGS_CODING_HW: CMakeFiles/DS_ALGS_CODING_HW.dir/build.make
 DS_ALGS_CODING_HW: CMakeFiles/DS_ALGS_CODING_HW.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable DS_ALGS_CODING_HW"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable DS_ALGS_CODING_HW"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DS_ALGS_CODING_HW.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -168,6 +168,6 @@ CMakeFiles/DS_ALGS_CODING_HW.dir/clean:
 .PHONY : CMakeFiles/DS_ALGS_CODING_HW.dir/clean
 
 CMakeFiles/DS_ALGS_CODING_HW.dir/depend:
-	cd /home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/snirlugassy/Projects/DS_ALGS_CODING_HW /home/snirlugassy/Projects/DS_ALGS_CODING_HW /home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug /home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug /home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles/DS_ALGS_CODING_HW.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/snirlugassy/ds_algs_dynamic_graph /home/snirlugassy/ds_algs_dynamic_graph /home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug /home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug /home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/CMakeFiles/DS_ALGS_CODING_HW.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/DS_ALGS_CODING_HW.dir/depend
 

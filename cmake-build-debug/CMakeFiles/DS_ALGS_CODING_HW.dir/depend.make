@@ -5,6 +5,8 @@ CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o: ../Dynamic_Graph.cpp
 CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o: ../Dynamic_Graph.h
 CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o: ../Graph_Edge.h
 CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o: ../Graph_Node.h
+CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o: ../LinkedList.h
+CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o: ../ListNode.h
 CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o: ../Rooted_Tree.h
 CMakeFiles/DS_ALGS_CODING_HW.dir/Dynamic_Graph.cpp.o: ../Tree_Node.h
 

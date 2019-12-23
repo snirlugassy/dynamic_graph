@@ -22,16 +22,21 @@ int main() {
 
     LinkedList<int> list;
     int a=1, b=5, c=7, d=13;
-    list.push_back(&a);
-    std::cout << *list.begin() << std::endl;
-    list.push_back(&b);
-    std::cout << *list.begin() << std::endl;
+    std::cout << list.length() << std::endl;
+    list.push_back(a);
+    std::cout << list.length() << std::endl;
+    list.push_back(b);
+    std::cout << list.length() << std::endl;
     list.pop_back();
-    std::cout << *list.begin() << std::endl;
-    list.push_back(&c);
-    std::cout << *list.begin() << std::endl;
+    std::cout << list.length() << std::endl;
     list.pop_back();
-    std::cout << *list.begin() << std::endl;
+    std::cout << list.length() << std::endl;
+    list.pop_back();
+    std::cout << list.length() << std::endl;
+    list.push_back(c);
+    std::cout << list.length() << std::endl;
+    list.pop_back();
+    std::cout << list.length() << std::endl;
 
 
     return 0;

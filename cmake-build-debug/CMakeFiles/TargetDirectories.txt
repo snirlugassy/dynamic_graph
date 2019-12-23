@@ -1,3 +1,3 @@
-/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles/DS_ALGS_CODING_HW.dir
-/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/CMakeFiles/DS_ALGS_CODING_HW.dir
+/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/CMakeFiles/edit_cache.dir

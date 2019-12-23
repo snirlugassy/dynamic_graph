@@ -8,10 +8,12 @@
 #include "Graph_Node.h"
 #include "Graph_Edge.h"
 #include "Rooted_Tree.h"
+#include "LinkedList.h"
 
 class Dynamic_Graph {
 private:
-    Graph_Node* first = nullptr;
+    LinkedList<Graph_Node*> _nodes;
+    LinkedList<Graph_Edge*> _edges;
 
 public:
     Dynamic_Graph();

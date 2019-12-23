@@ -8,122 +8,122 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug"/>
+				<Option working_dir="/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug"/>
+				<Option working_dir="/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DS_ALGS_CODING_HW">
-				<Option output="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/DS_ALGS_CODING_HW" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug"/>
+				<Option output="/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/DS_ALGS_CODING_HW" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 DS_ALGS_CODING_HW"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 DS_ALGS_CODING_HW"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DS_ALGS_CODING_HW/fast">
-				<Option output="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/DS_ALGS_CODING_HW" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug"/>
+				<Option output="/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/DS_ALGS_CODING_HW" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 DS_ALGS_CODING_HW/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 DS_ALGS_CODING_HW/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug"/>
+				<Option working_dir="/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/snirlugassy/Projects/DS_ALGS_CODING_HW/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/snirlugassy/ds_algs_dynamic_graph/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/Dynamic_Graph.cpp">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/Dynamic_Graph.cpp">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/Dynamic_Graph.h">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/Dynamic_Graph.h">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/Graph_Edge.cpp">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/Graph_Edge.cpp">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/Graph_Edge.h">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/Graph_Edge.h">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/Graph_Node.cpp">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/Graph_Node.cpp">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/Graph_Node.h">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/Graph_Node.h">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/LinkedList.h">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/LinkedList.h">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/ListNode.h">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/ListNode.h">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/Rooted_Tree.cpp">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/Rooted_Tree.cpp">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/Rooted_Tree.h">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/Rooted_Tree.h">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/Tree_Node.cpp">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/Tree_Node.cpp">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/Tree_Node.h">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/Tree_Node.h">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/main.cpp">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/main.cpp">
 			<Option target="DS_ALGS_CODING_HW"/>
 		</Unit>
-		<Unit filename="/home/snirlugassy/Projects/DS_ALGS_CODING_HW/CMakeLists.txt">
+		<Unit filename="/home/snirlugassy/ds_algs_dynamic_graph/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
