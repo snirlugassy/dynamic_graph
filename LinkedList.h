@@ -17,7 +17,7 @@ public:
     LinkedList();
     virtual ~LinkedList();
     LinkedList(T &element);
-    bool empty();
+    bool empty() const;
     void push_back(T &element);
     void push_front(T &element);
     void pop_back();
@@ -25,9 +25,9 @@ public:
     void remove(ListNode<T> *node);
     void insert_after(ListNode<T> *node);
     void insert_before(ListNode<T> *node);
-    T* begin();
-    T* end();
-    unsigned int length();
+    T* begin() const;
+    T* end() const;
+    unsigned int length() const;
 };
 
 template <typename T>
@@ -41,7 +41,7 @@ LinkedList<T>::LinkedList(T &element) {
 };
 
 template <typename T>
-bool LinkedList<T>::empty() {
+bool LinkedList<T>::empty() const {
     return this->_first == nullptr && this->_last == nullptr;
 };
 
@@ -111,21 +111,21 @@ void LinkedList<T>::remove(ListNode<T> *node) {
 };
 
 template <typename T>
-T* LinkedList<T>::begin() {
+T* LinkedList<T>::begin() const {
     if (this->_first != nullptr)
         return this->_first->element;
     return nullptr;
 };
 
 template <typename T>
-T* LinkedList<T>::end() {
+T* LinkedList<T>::end() const {
     if (this->_last != nullptr)
         return this->_last.element;
     return nullptr;
 };
 
 template <typename T>
-unsigned int LinkedList<T>::length() {
+unsigned int LinkedList<T>::length() const {
     return this->_length;
 }
 
@@ -133,6 +133,12 @@ template<typename T>
 LinkedList<T>::~LinkedList() {
     while(!this->empty())
         pop_back();
-};
+}
+
+template<typename T>
+void LinkedList<T>::insert_before(ListNode<T> *node) {};
+
+template<typename T>
+void LinkedList<T>::insert_after(ListNode<T> *node) {};
 
 #endif //DS_ALGS_CODING_HW_LINKEDLIST_H

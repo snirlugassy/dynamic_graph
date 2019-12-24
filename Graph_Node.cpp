@@ -15,11 +15,11 @@ void Graph_Node::insert_in_node(Graph_Node *node) {
 }
 
 unsigned Graph_Node::Get_out_Degree() const {
-    return _out_nodes.size();
+    return _out_nodes.length();
 }
 
 unsigned Graph_Node::Get_in_Degree() const {
-    return _in_nodes.size();
+    return _in_nodes.length();
 }
 
 unsigned Graph_Node::Get_key() const {

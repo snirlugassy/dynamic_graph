@@ -10,7 +10,9 @@ Dynamic_Graph::~Dynamic_Graph() {};
 
 //Graph_Node* Dynamic_Graph::Insert_Node(unsigned node_key) {} ;
 
-void Dynamic_Graph::Delete_Node(Graph_Node* node) {};
+void Dynamic_Graph::Delete_Node(Graph_Node* node) {
+    _nodes.remove(node);
+};
 
 Graph_Edge* Dynamic_Graph::Insert_Edge(Graph_Node* from, Graph_Node* to) {
     Graph_Edge *edge = new Graph_Edge(from, to);

@@ -5,14 +5,14 @@
 #ifndef DS_ALGS_CODING_HW_GRAPH_NODE_H
 #define DS_ALGS_CODING_HW_GRAPH_NODE_H
 
-
-#include <list>
+#include "LinkedList.h"
+#include "ListNode.h"
 
 class Graph_Node {
 private:
     // TODO: chage to LinkedList
-    std::list<Graph_Node *> _out_nodes;
-    std::list<Graph_Node *> _in_nodes;
+    LinkedList<Graph_Node*> _out_nodes;
+    LinkedList<Graph_Node*> _in_nodes;
     unsigned int _id;
 public: //TODO: make some members protected
     Graph_Node(unsigned int id);
