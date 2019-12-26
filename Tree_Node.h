@@ -5,15 +5,16 @@
 #ifndef DS_ALGS_CODING_HW_TREE_NODE_H
 #define DS_ALGS_CODING_HW_TREE_NODE_H
 
+#include "stddef.h"
 
 class Tree_Node {
 private:
     unsigned int _id;
     // TODO: assign height
     unsigned int _height;
-    Tree_Node* _parent = nullptr;
-    Tree_Node* _left_child = nullptr;
-    Tree_Node* _right_sibling = nullptr;
+    Tree_Node* _parent = NULL;
+    Tree_Node* _left_child = NULL;
+    Tree_Node* _right_sibling = NULL;
 public:
     Tree_Node(unsigned int id);
     // Setters

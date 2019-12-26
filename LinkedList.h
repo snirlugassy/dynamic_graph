@@ -5,26 +5,28 @@
 #ifndef DS_ALGS_CODING_HW_LINKEDLIST_H
 #define DS_ALGS_CODING_HW_LINKEDLIST_H
 
-#include "ListNode.h"
+#include "stddef.h"
+
+
+// not responsible for deleting pointers
 
 template <typename T>
 class LinkedList {
 private:
-    ListNode<T> *_first = nullptr;
-    ListNode<T> *_last = nullptr;
+    T* _first = NULL;
+    T* _last = NULL;
     unsigned _length = 0;
 public:
     LinkedList();
     virtual ~LinkedList();
-    LinkedList(T &element);
     bool empty() const;
     void push_back(T &element);
     void push_front(T &element);
     void pop_back();
     void pop_front();
-    void remove(ListNode<T> *node);
-    void insert_after(ListNode<T> *node);
-    void insert_before(ListNode<T> *node);
+    void remove(T *node);
+    void insert_after(T &item);
+    void insert_before(T &item);
     T* begin() const;
     T* end() const;
     unsigned int length() const;
@@ -34,111 +36,108 @@ template <typename T>
 LinkedList<T>::LinkedList() {};
 
 template <typename T>
-LinkedList<T>::LinkedList(T &element) {
-    ListNode<T> *node = new ListNode(element);
-    this->_first = node;
-    this->_last = node;
-};
-
-template <typename T>
 bool LinkedList<T>::empty() const {
-    return this->_first == nullptr && this->_last == nullptr;
+    return _first == NULL && _last == NULL;
 };
 
 template <typename T>
-void LinkedList<T>::push_back(T &element) {
-    ListNode<T> *node = new ListNode<T>(element);
-    if (this->_last == nullptr)
+void LinkedList<T>::push_back(T &item) {
+    if (_last == NULL)
         // in case the list is empty
-        this->_last = node;
-    if (this->_first != nullptr){
+        _last = &item;
+    if (_first != NULL){
         // the new first is the prev of the old first
-        this->_first->prev = node;
+        _first->prev = &item;
         // the next of the new first is the old first
-        node->next = this->_first;
+        item.next = _first;
     }
-    this->_first = node;
-    this->_length++;
+    _first = &item;
+    _length++;
 };
 
-template <typename T>
-void LinkedList<T>::push_front(T &element) {
-    ListNode<T> *node = new ListNode<T>(element);
-    if (this->_first == nullptr)
-        // in case the list is empty
-        this->_first = node;
-    if (this->_last != nullptr) {
-        // the new last is the next of the old last
-        this->_last->next = node;
-        // the prev of the new last is the old last
-        node->prev = this->_last;
-    }
-    this->_last = node;
-    this->_length++;
-};
+//template <typename T>
+//void LinkedList<T>::push_front(T &item) {
+//    if (_first == NULL)
+//        // in case the list is empty
+//        _first = item;
+//    if (_last != NULL) {
+//        // the new last is the next of the old last
+//        _last->next = item;
+//        // the prev of the new last is the old last
+//        item->prev = _last;
+//    }
+//    _last = item;
+//    _length++;
+//};
 
 template <typename T>
 void LinkedList<T>::pop_back() {
-    if (this->_first != nullptr && this->_last != nullptr) {
-        ListNode<T> *_temp = this->_first;
-        this->_first = this->_first->next;
-        delete _temp;
-        this->_length--;
+    if (_first != NULL) {
+        T *_garbage = _first;
+        _first = _first->next;
+        _garbage->prev = NULL;
+        _garbage->next = NULL;
+        _length--;
     }
 };
 
 template <typename T>
 void LinkedList<T>::pop_front() {
-    if (this->_first != nullptr && this->_last != nullptr) {
-        ListNode<T> *_temp = this->_last;
-        this->_last = this->_last->prev;
-        delete _temp;
-        this->_length--;
+    if (_last != NULL) {
+        T *_garbage = _last;
+        _last = _last->prev;
+        _garbage->prev = NULL;
+        _garbage->next = NULL;
+        _length--;
     }
 };
 
 template <typename T>
-void LinkedList<T>::remove(ListNode<T> *node) {
-    if (node->prev != nullptr) {
-        // might be null
-        node->prev->next = node->next;
-    }
-    if (node->next != nullptr) {
-        // might be null
-        node->next->prev = node->prev;
-    }
-    delete node;
+void LinkedList<T>::remove(T *item) {
+    if (_first == item)
+        _first = item->next;
+    if (_last == item)
+        _last = item->prev;
+    if (item->prev != NULL)
+        item->prev->next = item->next;
+    if (item->next != NULL)
+        item->next->prev = item->prev;
+
+    // decrease the length if found
+    // TODO: think of a way to avoid decreasing fake nodes
+    _length -= (int) (item->prev != NULL || item->next != NULL);
+    item->prev = NULL;
+    item->next = NULL;
 };
 
 template <typename T>
 T* LinkedList<T>::begin() const {
-    if (this->_first != nullptr)
-        return this->_first->element;
-    return nullptr;
+    return _first;
 };
 
 template <typename T>
 T* LinkedList<T>::end() const {
-    if (this->_last != nullptr)
-        return this->_last.element;
-    return nullptr;
+    return _last;
 };
 
 template <typename T>
 unsigned int LinkedList<T>::length() const {
-    return this->_length;
+    return _length;
 }
 
-template<typename T>
+template <typename T>
 LinkedList<T>::~LinkedList() {
-    while(!this->empty())
+    while(!empty()) {
         pop_back();
+        pop_front();
+    }
 }
 
-template<typename T>
-void LinkedList<T>::insert_before(ListNode<T> *node) {};
+template <typename T>
+void LinkedList<T>::insert_before(T &item) {};
 
-template<typename T>
-void LinkedList<T>::insert_after(ListNode<T> *node) {};
+template <typename T>
+void LinkedList<T>::insert_after(T &item) {};
+
 
 #endif //DS_ALGS_CODING_HW_LINKEDLIST_H

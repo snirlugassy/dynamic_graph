@@ -2,7 +2,9 @@
 // Created by snirlugassy on 12/20/19.
 //
 
+#include "stddef.h"
 #include "Tree_Node.h"
+
 Tree_Node::Tree_Node(unsigned int id): _id(id) {}
 
 void Tree_Node::set_parent(Tree_Node *parent) {
@@ -34,17 +36,17 @@ Tree_Node* Tree_Node::get_sibling() {
 }
 
 bool Tree_Node::has_sibling() {
-    return this->_right_sibling != nullptr;
+    return this->_right_sibling != NULL;
 }
 
 bool Tree_Node::is_leaf() {
-    return this->_left_child != nullptr;
+    return this->_left_child != NULL;
 }
 
 bool Tree_Node::is_root() {
-    return this->_parent == nullptr;
+    return this->_parent == NULL;
 }
 
 void Tree_Node::delete_child() {
-    this->_left_child = nullptr;
+    this->_left_child = NULL;
 }

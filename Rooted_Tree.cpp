@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include <queue>
+#include "stddef.h"
 #include "Rooted_Tree.h"
 
 Rooted_Tree::Rooted_Tree() {}

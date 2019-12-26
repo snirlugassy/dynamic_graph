@@ -6,8 +6,9 @@
 #define DS_ALGS_CODING_HW_GRAPH_EDGE_H
 
 #include "Graph_Node.h"
+#include "ListItem.h"
 
-class Graph_Edge {
+class Graph_Edge: public ListItem<Graph_Edge> {
 private:
     Graph_Node *_start;
     Graph_Node *_end;

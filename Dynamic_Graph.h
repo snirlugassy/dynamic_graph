@@ -12,8 +12,8 @@
 
 class Dynamic_Graph {
 private:
-    LinkedList<Graph_Node*> _nodes;
-    LinkedList<Graph_Edge*> _edges;
+    LinkedList<Graph_Node> _nodes;
+    LinkedList<Graph_Edge> _edges;
 
 public:
     Dynamic_Graph();
