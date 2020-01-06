@@ -11,15 +11,17 @@ template <typename T>
 class ListItem {
 protected:
     unsigned int _id;
-    T *next = NULL;
-    T *prev = NULL;
+    ListItem *next = NULL;
+    ListItem *prev = NULL;
+    T *item;
 
     // Any linked list is a friend
     template <class S>
     friend class LinkedList;
+//    friend class AdjacencyList;
 public:
     ListItem<T>() {};
-    ListItem<T>(unsigned int id): _id(id) {};
+    ListItem<T>(T* item): item(item) {};
 };
 
 #endif //DS_ALGS_CODING_HW_LISTITEM_H

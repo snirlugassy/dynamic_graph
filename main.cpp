@@ -1,10 +1,8 @@
 #include <iostream>
-#include "Graph_Edge.h"
-#include "Graph_Node.h"
-#include "Rooted_Tree.h"
-#include "Tree_Node.h"
-#include "LinkedList.h"
 #include "Dynamic_Graph.h"
+#include "Graph_Node.h"
+#include "Graph_Edge.h"
+
 
 int main() {
     Dynamic_Graph DG;
@@ -13,32 +11,35 @@ int main() {
     Graph_Node *two = DG.Insert_Node(2);
     Graph_Node *three = DG.Insert_Node(3);
     Graph_Node *four = DG.Insert_Node(4);
+    Graph_Node *five = DG.Insert_Node(5);
+    Graph_Node *six = DG.Insert_Node(6);
+    Graph_Node *seven = DG.Insert_Node(7);
+    Graph_Node *eight = DG.Insert_Node(8);
 
-    DG.Delete_Node(one);
-    DG.Delete_Node(three);
+    Graph_Edge* e1 = DG.Insert_Edge(seven, eight);
+    Graph_Edge* e2 = DG.Insert_Edge(eight, seven);
+    Graph_Edge* e3 = DG.Insert_Edge(seven, six);
+    Graph_Edge* e4 = DG.Insert_Edge(one, six);
+    Graph_Edge* e5 = DG.Insert_Edge(six, one);
+    Graph_Edge* e6 =  DG.Insert_Edge(one, two);
+    Graph_Edge* e7 = DG.Insert_Edge(two, three);
+    Graph_Edge* e8 = DG.Insert_Edge(three, four);
+    Graph_Edge* e9 = DG.Insert_Edge(three, five);
+    Graph_Edge* e10 = DG.Insert_Edge(five, three);
 
-//    Tree_Node n1(1), n2(2), n3(3), n4(4), n5(5), n6(6), n7(7), n8(8);
-//    n1.set_child(&n2);
-//    n2.set_child(&n3);
-//    n2.set_sibling(&n4);
-//    n4.set_child(&n6);
-//    n4.set_sibling(&n5);
-//    n6.set_sibling(&n7);
-//    n7.set_sibling(&n8);
+    Rooted_Tree *T = DG.SCC();
+
 //
-//    Rooted_Tree tree(&n1);
-//    tree.Print_By_Layer(std::cout);
+//    DG.Delete_Edge(e1);
+//    DG.Delete_Edge(e2);
+//    DG.Delete_Edge(e3);
+//    DG.Delete_Edge(e4);
+//    DG.Delete_Edge(e5);
+//    DG.Delete_Edge(e6);
+//    DG.Delete_Edge(e7);
+//    DG.Delete_Edge(e8);
+//    DG.Delete_Edge(e9);
+//    DG.Delete_Edge(e10);
 
-
-    std::cout << "Linked list:" << std::endl;
-    LinkedList<Graph_Node> list;
-    Graph_Node *n = new Graph_Node(1);
-    list.push_back(*n);
-    Graph_Node * fir = list.begin();
-    list.remove(fir);
-    std::cout << fir->Get_key() << std::endl;
-    list.pop_back();
-    Graph_Node g = Graph_Node(5);
-    list.push_back(g);
     return 0;
 }

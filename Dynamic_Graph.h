@@ -9,12 +9,17 @@
 #include "Graph_Edge.h"
 #include "Rooted_Tree.h"
 #include "LinkedList.h"
+#include "typedefs.h"
+#include <stack>
 
 class Dynamic_Graph {
 private:
-    LinkedList<Graph_Node> _nodes;
-    LinkedList<Graph_Edge> _edges;
-
+    NodeList _nodes;
+    EdgeList _edges;
+    void _dfs_visit(std::stack<Graph_Node*> *_stack, Graph_Node* node) const;
+    void _dfs_unvisit(std::stack<Graph_Node*> *_stack, Graph_Node* node) const;
+    void _dfs();
+    void transpose();
 public:
     Dynamic_Graph();
     ~Dynamic_Graph();
