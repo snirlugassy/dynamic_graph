@@ -3,6 +3,20 @@
 #include "Graph_Node.h"
 #include "Graph_Edge.h"
 
+#define SEED 23454
+#define TEST_SIZE 30
+#define INITIAL_NODES_NUM 10
+#define INITIAL_EDGES_NUM 30
+#define NUM_OF_OPERATIONS 8
+#define INSERT_NODE 1
+#define INSERT_EDGE 2
+#define DELETE_NODE 3
+#define DELETE_EDGE 4
+#define STRONGLY_CONNECTED_COMPONENTS 5
+#define RUN_BFS 6
+#define OUT_DEGREE 7
+#define IN_DEGREE 8
+
 
 int main() {
     Dynamic_Graph DG;
@@ -28,8 +42,8 @@ int main() {
     Graph_Edge* e10 = DG.Insert_Edge(five, three);
 
     Rooted_Tree *T = DG.SCC();
+    T->Print_By_Layer(std::cout);
 
-//
 //    DG.Delete_Edge(e1);
 //    DG.Delete_Edge(e2);
 //    DG.Delete_Edge(e3);

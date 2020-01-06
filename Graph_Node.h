@@ -18,6 +18,7 @@ private:
     // DFS variables
     unsigned _color;
     Graph_Node* _pi;
+    void transpose();
     friend class Dynamic_Graph;
 
 public: //TODO: make some members protected

@@ -15,6 +15,13 @@ Graph_Node::~Graph_Node() {
         _in_nodes.pop_front();
     }
 }
+
+void Graph_Node::transpose() {
+    AdjacencyList temp = _out_nodes;
+    _out_nodes = _in_nodes;
+    _in_nodes = temp;
+}
+
 unsigned Graph_Node::Get_out_Degree() const {
     return _out_nodes.size();
 }

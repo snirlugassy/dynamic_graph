@@ -18,7 +18,7 @@ private:
     AdjacencyListNode  _start_adj_iterator;
     AdjacencyListNode _end_adj_iterator;
     EdgeIterator _graph_pos;
-
+    void transpose();
     friend class Dynamic_Graph;
 public:
     Graph_Edge(
@@ -27,7 +27,6 @@ public:
         AdjacencyListNode startAdjIterator,
         AdjacencyListNode endAdjIterator
     );
-    void flip();
 };
 
 

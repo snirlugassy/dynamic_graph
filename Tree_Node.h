@@ -10,12 +10,12 @@
 class Tree_Node {
 private:
     unsigned int _id;
-    // TODO: assign height
-    unsigned int _height;
     Tree_Node* _parent = NULL;
     Tree_Node* _left_child = NULL;
     Tree_Node* _right_sibling = NULL;
 public:
+    // TODO: assign height
+    unsigned int height;
     Tree_Node(unsigned int id);
     // Setters
     void set_parent(Tree_Node* parent);
@@ -28,6 +28,7 @@ public:
     Tree_Node* get_child();
     Tree_Node* get_sibling();
 
+    Tree_Node* add_child(unsigned int id);
     void delete_child();
     bool is_leaf();
     bool is_root();

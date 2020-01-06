@@ -17,9 +17,9 @@ private:
     NodeList _nodes;
     EdgeList _edges;
     void _dfs_visit(std::stack<Graph_Node*> *_stack, Graph_Node* node) const;
-    void _dfs_unvisit(std::stack<Graph_Node*> *_stack, Graph_Node* node) const;
+    void _dfs_unvisit(Graph_Node* node, Tree_Node* _scc_tree_node) const;
     void _dfs();
-    void transpose();
+    void transpose() const;
 public:
     Dynamic_Graph();
     ~Dynamic_Graph();
