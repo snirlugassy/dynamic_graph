@@ -17,6 +17,8 @@ public:
     // TODO: assign height
     unsigned int height;
     Tree_Node(unsigned int id);
+    Tree_Node(unsigned int id, Tree_Node* parent);
+
     // Setters
     void set_parent(Tree_Node* parent);
     void set_child(Tree_Node* child);

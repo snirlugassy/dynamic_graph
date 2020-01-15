@@ -7,6 +7,7 @@
 
 // TODO: create a destructor
 Tree_Node::Tree_Node(unsigned int id): _id(id), height(0) {}
+Tree_Node::Tree_Node(unsigned int id, Tree_Node* parent): _id(id), _parent(parent) ,height(0) {}
 
 void Tree_Node::set_parent(Tree_Node *parent) {
     _parent = parent;

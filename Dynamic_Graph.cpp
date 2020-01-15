@@ -2,6 +2,7 @@
 // Created by snirlugassy on 12/20/19.
 //
 
+#include <queue>
 #include "Dynamic_Graph.h"
 #include "typedefs.h"
 #include "stddef.h"
@@ -144,4 +145,40 @@ void Dynamic_Graph::transpose() const {
     }
 }
 
-//Rooted_Tree* Dynamic_Graph::BFS(Graph_Node* source) const {};
+Rooted_Tree* Dynamic_Graph::BFS(Graph_Node* source) const {
+        Tree_Node * _bfs_tree_node = new Tree_Node(source->_id);
+        Rooted_Tree *_bfs_tree = new Rooted_Tree(_bfs_tree_node);
+
+        std::queue<Graph_Node*> Q;
+
+        for (std::list<Graph_Node*>::const_iterator v = _nodes.begin(); v != _nodes.end(); v++) {
+            (*v)->_color = WHITE;
+            (*v)->_pi = NULL;
+            (*v)->_distance = -1;
+        }
+
+        source->_color = GRAY;
+        source->_pi = NULL;
+        source->_distance = 0;
+
+        // Enqueue
+        Q.push(source);
+
+        while(!Q.empty()) {
+            // Dequeue
+            Graph_Node* u = Q.front();
+            Q.pop();
+            Tree_Node * _bfs_tree_node = new Tree_Node(u->_id);
+            for (std::list<Graph_Node*>::const_iterator v = u->_out_nodes.begin(); v != u->_out_nodes.end(); v++) {
+                Graph_Node *node = *v;
+                if( node->_color == WHITE){
+                    Tree_Node * _bfs_tree_child = new Tree_Node(node->_id);
+                    node->_color = GRAY;
+                    node->_distance = u->_distance + 1;
+                    node->_pi = u;
+                    Q.push(node);
+                }
+            }
+            u->_color = BLACK;
+        }
+    };

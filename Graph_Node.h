@@ -18,6 +18,8 @@ private:
     // DFS variables
     unsigned _color;
     Graph_Node* _pi;
+    // BFS varibales
+    unsigned _distance;
     void transpose();
     friend class Dynamic_Graph;
 

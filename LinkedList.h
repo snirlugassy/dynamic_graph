@@ -15,6 +15,8 @@ private:
     T* _last = NULL;
     unsigned _length = 0;
 public:
+    typedef T* iterator;
+    typedef const T* const_iterator;
     LinkedList();
     virtual ~LinkedList();
     bool empty() const;
