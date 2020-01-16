@@ -55,8 +55,8 @@ void Dynamic_Graph::Delete_Edge(Graph_Edge* edge) {
 
 void Dynamic_Graph::_dfs_visit(std::stack<Graph_Node*> *_stack, Graph_Node* node) const {
     node->_color = GRAY;
-    std::list<Graph_Node*>::const_iterator v = node->_out_nodes.begin();
-    for (; v != node->_out_nodes.end(); v++) {
+    std::list<Graph_Node*>::const_reverse_iterator v = node->_out_nodes.crbegin();
+    for (; v != node->_out_nodes.crend(); v++) {
         Graph_Node *adj = *v;
         if (adj->_color == WHITE) {
             adj->_pi = node;
@@ -69,11 +69,11 @@ void Dynamic_Graph::_dfs_visit(std::stack<Graph_Node*> *_stack, Graph_Node* node
 
 void Dynamic_Graph::_dfs_unvisit(Graph_Node* node, Tree_Node* _scc_tree_node) const {
     node->_color = GRAY;
-    std::list<Graph_Node*>::const_iterator v = node->_out_nodes.begin();
-    for (; v != node->_out_nodes.end(); v++) {
+    std::list<Graph_Node*>::const_reverse_iterator v = node->_out_nodes.crbegin();
+    for (; v != node->_out_nodes.crend(); v++) {
         Graph_Node *adj = *v;
         if(adj->_color == BLACK) {
-            Tree_Node * _scc_component_node = _scc_tree_node->add_child(adj->_id);
+            Tree_Node * _scc_component_node = _scc_tree_node->append_child(adj->_id);
             adj->_pi = node;
             _dfs_unvisit(adj, _scc_component_node);
         }
@@ -97,7 +97,7 @@ Rooted_Tree* Dynamic_Graph::SCC() const {
 
     // First DFS traversal
     // DFS: O(N+M)
-    for (std::list<Graph_Node*>::const_iterator u = _nodes.begin(); u != _nodes.end(); u++) {
+    for (std::list<Graph_Node*>::const_reverse_iterator u = _nodes.crbegin(); u != _nodes.crend(); u++) {
         Graph_Node *node = *u;
         if( node->_color == WHITE){
             this->_dfs_visit(&S, node);
@@ -118,7 +118,7 @@ Rooted_Tree* Dynamic_Graph::SCC() const {
     while(!S.empty()) {
         Graph_Node *v = S.top();
         if (v->_color == BLACK) {
-            Tree_Node *_scc_root = _root->add_child(v->_id);
+            Tree_Node *_scc_root = _root->append_child(v->_id);
             _dfs_unvisit(v, _scc_root);
         }
         S.pop();
@@ -146,39 +146,46 @@ void Dynamic_Graph::transpose() const {
 }
 
 Rooted_Tree* Dynamic_Graph::BFS(Graph_Node* source) const {
-        Tree_Node * _bfs_tree_node = new Tree_Node(source->_id);
-        Rooted_Tree *_bfs_tree = new Rooted_Tree(_bfs_tree_node);
+        Tree_Node * _bfs_tree_root = new Tree_Node(source->_id);
+        Rooted_Tree *_bfs_tree = new Rooted_Tree(_bfs_tree_root);
 
         std::queue<Graph_Node*> Q;
+        std::queue<Tree_Node*> Q_tree;
 
         for (std::list<Graph_Node*>::const_iterator v = _nodes.begin(); v != _nodes.end(); v++) {
             (*v)->_color = WHITE;
-            (*v)->_pi = NULL;
-            (*v)->_distance = -1;
         }
 
         source->_color = GRAY;
-        source->_pi = NULL;
-        source->_distance = 0;
 
         // Enqueue
         Q.push(source);
+        Q_tree.push(_bfs_tree_root);
 
         while(!Q.empty()) {
             // Dequeue
-            Graph_Node* u = Q.front();
+            Graph_Node * u = Q.front();
             Q.pop();
-            Tree_Node * _bfs_tree_node = new Tree_Node(u->_id);
-            for (std::list<Graph_Node*>::const_iterator v = u->_out_nodes.begin(); v != u->_out_nodes.end(); v++) {
+
+            Tree_Node *u_tree = Q_tree.front();
+            Q_tree.pop();
+
+            std::list<Graph_Node*>::const_reverse_iterator v = u->_out_nodes.crbegin();
+            for (; v != u->_out_nodes.crend(); v++) {
                 Graph_Node *node = *v;
                 if( node->_color == WHITE){
-                    Tree_Node * _bfs_tree_child = new Tree_Node(node->_id);
                     node->_color = GRAY;
-                    node->_distance = u->_distance + 1;
-                    node->_pi = u;
                     Q.push(node);
+
+                    // Add the child to the BFS tree
+                    Tree_Node * _bfs_tree_child = new Tree_Node(node->_id);
+                    _bfs_tree_child->set_parent(u_tree);
+                    u_tree->append_child(_bfs_tree_child);
+                    Q_tree.push(_bfs_tree_child);
                 }
             }
             u->_color = BLACK;
         }
+
+        return _bfs_tree;
     };

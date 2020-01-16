@@ -30,11 +30,14 @@ public:
     Tree_Node* get_child();
     Tree_Node* get_sibling();
 
-    Tree_Node* add_child(unsigned int id);
+    Tree_Node* append_child(unsigned int id);
+    Tree_Node* append_child(Tree_Node *child);
     void delete_child();
     bool is_leaf();
     bool is_root();
     bool has_sibling();
+
+    ~Tree_Node();
 };
 
 

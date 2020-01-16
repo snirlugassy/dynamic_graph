@@ -4,16 +4,31 @@
 #include <iostream>
 #include <stack>
 #include <list>
-#include "stddef.h"
 #include "Rooted_Tree.h"
 
 Rooted_Tree::Rooted_Tree() {}
 Rooted_Tree::Rooted_Tree(Tree_Node *root):_root(root) {}
-Rooted_Tree::~Rooted_Tree() {}
+Rooted_Tree::~Rooted_Tree() {
+    delete _root;
+}
+
+Tree_Node * Rooted_Tree::get_root() { return _root; };
+void Rooted_Tree::set_root(Tree_Node *root) { _root = root; };
 
 void Rooted_Tree::Preorder_Print(std::ostream &stream) const {
-    // TODO: print preorder
-    stream << "hello\n";
+    Rooted_Tree::preorder_traverse(stream, this->_root);
+}
+
+void Rooted_Tree::preorder_traverse(std::ostream &stream, Tree_Node* node) {
+    if (node != NULL) {
+        stream << node->get_id();
+        Tree_Node *child = node->get_child();
+        while (child != NULL){
+            stream << "," ;
+            preorder_traverse(stream, child);
+            child = child->get_sibling();
+        }
+    }
 }
 
 void Rooted_Tree::Print_By_Layer(std::ostream &stream) const {

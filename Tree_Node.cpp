@@ -5,7 +5,20 @@
 #include "stddef.h"
 #include "Tree_Node.h"
 
-// TODO: create a destructor
+Tree_Node::~Tree_Node() {
+    if (this->_left_child != NULL) {
+        Tree_Node *l = this->_left_child;
+        Tree_Node *r = l->_right_sibling;
+        delete l;
+        while(r != NULL) {
+            l = r;
+            r = r->_right_sibling;
+            delete l;
+        }
+        delete r;
+    }
+}
+
 Tree_Node::Tree_Node(unsigned int id): _id(id), height(0) {}
 Tree_Node::Tree_Node(unsigned int id, Tree_Node* parent): _id(id), _parent(parent) ,height(0) {}
 
@@ -52,9 +65,24 @@ bool Tree_Node::is_root() {
     return this->_parent == NULL;
 }
 
-Tree_Node* Tree_Node::add_child(unsigned int id) {
+Tree_Node* Tree_Node::append_child(unsigned int id) {
     Tree_Node *child = new Tree_Node(id);
     child->height = height + 1;
+    child->_parent = this;
+    if (_left_child == NULL) {
+        _left_child = child;
+    } else {
+        Tree_Node *pos = _left_child;
+        while(pos->_right_sibling != NULL)
+            pos = pos->_right_sibling;
+        pos->_right_sibling = child;
+    }
+    return child;
+}
+
+Tree_Node* Tree_Node::append_child(Tree_Node *child) {
+    child->height = height + 1;
+    child->_parent = this;
     if (_left_child == NULL) {
         _left_child = child;
     } else {
