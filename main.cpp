@@ -2,6 +2,7 @@
 #include "Dynamic_Graph.h"
 #include "Graph_Node.h"
 #include "Graph_Edge.h"
+#include "LinkedList.h"
 
 #define SEED 23454
 #define TEST_SIZE 30
@@ -22,11 +23,14 @@ int main() {
 
     LinkedList<int*> L;
     int x1 = 1, x2 = 2, x3 = 3, x4 = 4, x5 = 5;
-    L.push_back(&x1);
-    L.push_back(&x2);
+    int *p1 = &x1, *p2 = &x2, *p3 = &x3, *p4 = &x4, *p5 = &x5;
 
-    for(LinkedList::iterator number = L.begin(); number != L.end(); number++) {
-        std::cout << *number << "\n" ;
+    L.push_back(p1);
+    L.push_back(p2);
+
+    for(LinkedList<int*>::iterator it = L.begin(); it != L.end(); ++it) {
+        int * x = *it;
+        std::cout << *x << "\n" ;
     }
 
 //    Dynamic_Graph DG;
