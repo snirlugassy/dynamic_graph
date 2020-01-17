@@ -6,7 +6,7 @@
 #define DS_ALGS_CODING_HW_LINKEDLIST_H
 
 #include "stddef.h"
-
+#include "ListIterator.h"
 
 template <typename T>
 class LinkedList {
@@ -15,7 +15,7 @@ private:
     T* _last = NULL;
     unsigned _length = 0;
 public:
-    typedef T* iterator;
+    typedef ListIterator<T>* iterator;
     typedef const T* const_iterator;
     LinkedList();
     virtual ~LinkedList();
@@ -31,6 +31,7 @@ public:
     T* end() const;
     unsigned int length() const;
 };
+
 
 template <typename T>
 LinkedList<T>::LinkedList() {};
