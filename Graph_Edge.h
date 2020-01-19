@@ -15,17 +15,17 @@ class Graph_Edge: public ListItem<Graph_Edge> {
 private:
     Graph_Node *_start;
     Graph_Node *_end;
-    AdjacencyListNode  _start_adj_iterator;
-    AdjacencyListNode _end_adj_iterator;
-    EdgeIterator _graph_pos;
+    AdjacencyList::iterator *_start_adj_iterator;
+    AdjacencyList::iterator *_end_adj_iterator;
+    // The graph's edges list participation iterator
+    // In order to delete the edge in constant time
+    EdgeList::iterator *_graph_pos;
     void transpose();
     friend class Dynamic_Graph;
 public:
     Graph_Edge(
         Graph_Node *start,
-        Graph_Node *end,
-        AdjacencyListNode startAdjIterator,
-        AdjacencyListNode endAdjIterator
+        Graph_Node *end
     );
 };
 

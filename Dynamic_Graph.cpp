@@ -2,47 +2,41 @@
 // Created by snirlugassy on 12/20/19.
 //
 
-#include <queue>
+
 #include "Dynamic_Graph.h"
 #include "typedefs.h"
-#include "stddef.h"
 
-Dynamic_Graph::Dynamic_Graph() {};
-
-Dynamic_Graph::~Dynamic_Graph() {
-    while(!_nodes.empty()){
-        delete *_nodes.begin();
-        _nodes.pop_front();
-    }
-    while(!_edges.empty()) {
-        delete *_edges.begin();
-        _edges.pop_front();
-    }
-};
 
 Graph_Node* Dynamic_Graph::Insert_Node(unsigned node_key) {
     Graph_Node *node = new Graph_Node(node_key);
     _nodes.push_back(node);
+    node->_graph_pos = &_nodes.end();
     return node;
 };
 
 
 void Dynamic_Graph::Delete_Node(Graph_Node* node) {
     if (node->Get_in_Degree() == 0 && node->Get_out_Degree() == 0) {
-        _nodes.remove(node);
+        _nodes.erase(node->_graph_pos);
         delete node;
     }
 };
 
 Graph_Edge* Dynamic_Graph::Insert_Edge(Graph_Node* from, Graph_Node* to) {
-    from->_out_nodes.push_front(to);
-    AdjacencyListNode fromAdjIter = from->_out_nodes.begin();
-    to->_in_nodes.push_front(from);
-    AdjacencyListNode toAdjIter = to->_in_nodes.begin();
+    Graph_Edge *edge = new Graph_Edge(from, to);
 
-    Graph_Edge *edge = new Graph_Edge(from, to, fromAdjIter, toAdjIter);
-    _edges.push_front(edge);
-    edge->_graph_pos = _edges.begin();
+    int x = 5;
+
+    from->_out_nodes.push_back(to);
+    to->_in_nodes.push_back(from);
+
+    edge->_start_adj_iterator = &(from->_out_nodes.end());
+    edge->_end_adj_iterator = &(to->_in_nodes.end());
+
+    _edges.push_back(edge);
+
+    edge->_graph_pos = &_edges.end();
+
     return edge;
 };
 
@@ -53,13 +47,12 @@ void Dynamic_Graph::Delete_Edge(Graph_Edge* edge) {
     delete edge;
 }
 
-void Dynamic_Graph::_dfs_visit(std::stack<Graph_Node*> *_stack, Graph_Node* node) const {
+void Dynamic_Graph::_dfs_visit(Stack<Graph_Node*> *_stack, Graph_Node* node) const {
     node->_color = GRAY;
-    std::list<Graph_Node*>::const_reverse_iterator v = node->_out_nodes.crbegin();
-    for (; v != node->_out_nodes.crend(); v++) {
+    LinkedList<Graph_Node*>::iterator v = node->_out_nodes.end();
+    for (; v.prev != NULL; --v) {
         Graph_Node *adj = *v;
         if (adj->_color == WHITE) {
-            adj->_pi = node;
             _dfs_visit(_stack, adj);
         }
     }
@@ -69,12 +62,11 @@ void Dynamic_Graph::_dfs_visit(std::stack<Graph_Node*> *_stack, Graph_Node* node
 
 void Dynamic_Graph::_dfs_unvisit(Graph_Node* node, Tree_Node* _scc_tree_node) const {
     node->_color = GRAY;
-    std::list<Graph_Node*>::const_reverse_iterator v = node->_out_nodes.crbegin();
-    for (; v != node->_out_nodes.crend(); v++) {
+    LinkedList<Graph_Node*>::iterator v = node->_out_nodes.end();
+    for (; v.prev != NULL; --v) {
         Graph_Node *adj = *v;
         if(adj->_color == BLACK) {
             Tree_Node * _scc_component_node = _scc_tree_node->append_child(adj->_id);
-            adj->_pi = node;
             _dfs_unvisit(adj, _scc_component_node);
         }
     }
@@ -86,18 +78,17 @@ Rooted_Tree* Dynamic_Graph::SCC() const {
     Rooted_Tree *_scc = new Rooted_Tree(_root);
 
     // TODO: create stack
-    std::stack<Graph_Node*> S;
+    Stack<Graph_Node*> S;
 
     // Initialize the graph nodes
     // O(N)
-    for (std::list<Graph_Node*>::const_iterator v = _nodes.begin(); v != _nodes.end(); v++) {
+    for (LinkedList<Graph_Node*>::iterator v = _nodes.begin(); *v != NULL; ++v) {
         (*v)->_color = WHITE;
-        (*v)->_pi = NULL;
     }
 
     // First DFS traversal
     // DFS: O(N+M)
-    for (std::list<Graph_Node*>::const_reverse_iterator u = _nodes.crbegin(); u != _nodes.crend(); u++) {
+    for (LinkedList<Graph_Node*>::iterator u = _nodes.begin(); *u != NULL; ++u) {
         Graph_Node *node = *u;
         if( node->_color == WHITE){
             this->_dfs_visit(&S, node);
@@ -109,9 +100,9 @@ Rooted_Tree* Dynamic_Graph::SCC() const {
     transpose();
 
     // O(N)
-    for (std::list<Graph_Node*>::const_iterator v = _nodes.begin(); v != _nodes.end(); v++) {
-        (*v)->_pi = NULL;
-    }
+//    for (std::list<Graph_Node*>::const_iterator v = _nodes.begin(); v != _nodes.end(); v++) {
+//        (*v)->_pi = NULL;
+//    }
 
     // DFS on the transposed graph
     // DFS: O(N+M)
@@ -133,13 +124,13 @@ Rooted_Tree* Dynamic_Graph::SCC() const {
 
 void Dynamic_Graph::transpose() const {
     // O(M)
-    for (std::list<Graph_Edge *>::const_iterator e = _edges.begin(); e != _edges.end(); e++) {
+    for (LinkedList<Graph_Edge *>::iterator e = _edges.begin(); *e != NULL; ++e) {
         Graph_Edge *edge = *e;
         edge->transpose();
     }
 
     // O(N)
-    for (std::list<Graph_Node *>::const_iterator v = _nodes.begin(); v != _nodes.end(); v++) {
+    for (LinkedList<Graph_Node *>::iterator v = _nodes.begin(); *v != NULL; ++v) {
         Graph_Node *node = *v;
         node->transpose();
     }
@@ -149,39 +140,39 @@ Rooted_Tree* Dynamic_Graph::BFS(Graph_Node* source) const {
         Tree_Node * _bfs_tree_root = new Tree_Node(source->_id);
         Rooted_Tree *_bfs_tree = new Rooted_Tree(_bfs_tree_root);
 
-        std::queue<Graph_Node*> Q;
-        std::queue<Tree_Node*> Q_tree;
+        Queue<Graph_Node*> Q;
+        Queue<Tree_Node*> Q_tree;
 
-        for (std::list<Graph_Node*>::const_iterator v = _nodes.begin(); v != _nodes.end(); v++) {
+        for (LinkedList<Graph_Node*>::iterator v = _nodes.begin(); *v != NULL; ++v) {
             (*v)->_color = WHITE;
         }
 
         source->_color = GRAY;
 
         // Enqueue
-        Q.push(source);
-        Q_tree.push(_bfs_tree_root);
+        Q.enqueue(source);
+        Q_tree.enqueue(_bfs_tree_root);
 
         while(!Q.empty()) {
             // Dequeue
             Graph_Node * u = Q.front();
-            Q.pop();
+            Q.dequeue();
 
             Tree_Node *u_tree = Q_tree.front();
-            Q_tree.pop();
+            Q_tree.dequeue();
 
-            std::list<Graph_Node*>::const_reverse_iterator v = u->_out_nodes.crbegin();
-            for (; v != u->_out_nodes.crend(); v++) {
+            LinkedList<Graph_Node*>::iterator v = u->_out_nodes.begin();
+            for (; *v != NULL; ++v) {
                 Graph_Node *node = *v;
                 if( node->_color == WHITE){
                     node->_color = GRAY;
-                    Q.push(node);
+                    Q.enqueue(node);
 
                     // Add the child to the BFS tree
                     Tree_Node * _bfs_tree_child = new Tree_Node(node->_id);
                     _bfs_tree_child->set_parent(u_tree);
                     u_tree->append_child(_bfs_tree_child);
-                    Q_tree.push(_bfs_tree_child);
+                    Q_tree.enqueue(_bfs_tree_child);
                 }
             }
             u->_color = BLACK;

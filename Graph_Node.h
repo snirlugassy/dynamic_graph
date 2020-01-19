@@ -14,12 +14,12 @@ private:
     // TODO: chage to LinkedList
     AdjacencyList _out_nodes;
     AdjacencyList _in_nodes;
+    // The graph's nodes list participation iterator
+    // In order to delete the node in constant time
+    NodeList::iterator* _graph_pos;
     unsigned int _id;
     // DFS variables
     unsigned _color;
-    Graph_Node* _pi;
-    // BFS varibales
-    unsigned _distance;
     void transpose();
     friend class Dynamic_Graph;
 

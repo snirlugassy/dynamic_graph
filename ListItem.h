@@ -11,7 +11,6 @@ template <typename T>
 class ListItem {
 public:
     typedef T* pointer;
-    typedef T item_type;
 
     ListItem<T> *next = NULL;
     ListItem<T> *prev = NULL;
@@ -21,22 +20,34 @@ public:
     ListItem<T>(pointer item): item(item) {};
 
     // Referencing
-    item_type& operator*() const { return *item; }
-    item_type& operator->() const { return *item; }
+    T operator*() const { if(item != NULL) return *item; return NULL; }
+    T operator->() const { if(item != NULL) return *item; return NULL; }
 
     // Iteration Operations
-    void operator++() {
+        void operator++() {
         if(next != NULL)
         {
             *this = *next;
+        } else {
+            prev = this;
+            item = NULL;
         }
     }
-    ListItem<T>& operator--() { return *this->prev; }
+
+    void operator--() {
+        if(prev != NULL)
+        {
+            *this = *prev;
+        } else {
+            next = this;
+            item = NULL;
+        }
+    }
 
     ListItem<T>& operator=(ListItem<T> &other) {
         prev = other.prev;
         next = other.next;
-        item = other.item;
+        *item = *(other.item);
         return *this;
     }
 

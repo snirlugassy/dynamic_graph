@@ -7,6 +7,8 @@
 
 #include <list>
 
+#include "LinkedList.h"
+
 #define WHITE 0
 #define GRAY 1
 #define BLACK 2
@@ -14,14 +16,8 @@
 class Graph_Edge;
 class Graph_Node;
 
-typedef std::list<Graph_Node*> AdjacencyList;
-typedef std::list<Graph_Node*>::iterator AdjacencyListNode;
-
-typedef std::list<Graph_Node*> NodeList;
-typedef std::list<Graph_Node*>::iterator NodeIterator;
-
-
-typedef std::list<Graph_Edge*> EdgeList;
-typedef std::list<Graph_Edge*>::iterator EdgeIterator;
+typedef LinkedList<Graph_Node*> AdjacencyList;
+typedef LinkedList<Graph_Node*> NodeList;
+typedef LinkedList<Graph_Edge*> EdgeList;
 
 #endif //DS_ALGS_CODING_HW_TYPEDEFS_H

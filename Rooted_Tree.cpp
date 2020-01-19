@@ -2,7 +2,6 @@
 // Created by snirlugassy on 12/20/19.
 //
 #include <iostream>
-#include <stack>
 #include <list>
 #include "Rooted_Tree.h"
 
