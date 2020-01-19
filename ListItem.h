@@ -25,9 +25,11 @@ public:
     item_type& operator->() const { return *item; }
 
     // Iteration Operations
-    ListItem<T>& operator++() {
-        *this = *next;
-        return *this;
+    void operator++() {
+        if(next != NULL)
+        {
+            *this = *next;
+        }
     }
     ListItem<T>& operator--() { return *this->prev; }
 

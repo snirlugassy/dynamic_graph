@@ -28,7 +28,8 @@ int main() {
     L.push_back(p1);
     L.push_back(p2);
 
-    for(LinkedList<int*>::iterator it = L.begin(); it != L.end(); ++it) {
+    LinkedList<int*>::iterator it = L.begin();
+    for(; it != L.end() ; ++it) {
         int * x = *it;
         std::cout << *x << "\n" ;
     }

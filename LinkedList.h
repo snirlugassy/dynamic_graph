@@ -34,19 +34,22 @@ public:
         ListItem<T> *_item = new ListItem<T>();
         _item->item = &item;
 
-        if (_last != NULL){
+        // in case the list is empty
+        if (_first == NULL) {
+            _first = *_item;
+            _last = *_item;
+        } else {
             // the new first is the prev of the old first
             _last.next = _item;
             // the next of the new first is the old first
             _item->prev = &_last;
+
+            if(_first == _last) {
+                _first.next = &_last;
+            }
+
+            _last = *_item;
         }
-        _last = *_item;
-
-
-        if (_first == NULL)
-            // in case the list is empty
-            _first = _last;
-
         _length++;
     };
 
@@ -62,11 +65,8 @@ public:
 
     void insert_before(iterator &item);
 
-    iterator front() const { return _first; };
-    iterator back() const { return _last; };
-
     iterator begin() const { return _first; };
-    iterator end() const { return NULL; };
+    iterator end() const { return _last; };
 
 
     unsigned int length() const {
