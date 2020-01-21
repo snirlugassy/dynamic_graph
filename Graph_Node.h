@@ -16,7 +16,7 @@ private:
     AdjacencyList _in_nodes;
     // The graph's nodes list participation iterator
     // In order to delete the node in constant time
-    NodeList::iterator* _graph_pos;
+    NodeList::iterator* _graph_pos = NULL;
     unsigned int _id;
     // DFS variables
     unsigned _color;
@@ -24,11 +24,17 @@ private:
     friend class Dynamic_Graph;
 
 public: //TODO: make some members protected
-    Graph_Node(unsigned int id);
+    explicit Graph_Node(unsigned int id);
     ~Graph_Node();
+
+    Graph_Node& operator=(const Graph_Node &rhs);
+    bool operator==(const Graph_Node &rhs) const;
+    bool operator!=(const Graph_Node &rhs) const;
+
     unsigned Get_out_Degree() const;
     unsigned Get_in_Degree() const;
     unsigned Get_key() const;
+
 };
 
 

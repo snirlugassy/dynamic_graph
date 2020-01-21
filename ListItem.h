@@ -5,7 +5,7 @@
 #ifndef DS_ALGS_CODING_HW_LISTITEM_H
 #define DS_ALGS_CODING_HW_LISTITEM_H
 
-#include "stddef.h"
+#include <cstddef>
 
 template <typename T>
 class ListItem {
@@ -14,14 +14,14 @@ public:
 
     ListItem<T> *next = NULL;
     ListItem<T> *prev = NULL;
-    T* item;
+    T item = NULL;
 
     ListItem<T>() {};
-    ListItem<T>(pointer item): item(item) {};
+    explicit ListItem<T>(T &item): item(item) {};
 
     // Referencing
-    T operator*() const { if(item != NULL) return *item; return NULL; }
-    T operator->() const { if(item != NULL) return *item; return NULL; }
+    T operator*() const {  return item;  }
+    T operator->() const {  return item;  }
 
     // Iteration Operations
         void operator++() {
@@ -44,10 +44,10 @@ public:
         }
     }
 
-    ListItem<T>& operator=(ListItem<T> &other) {
-        prev = other.prev;
-        next = other.next;
-        *item = *(other.item);
+    ListItem<T>& operator=(ListItem<T> const &rhs) {
+        prev = rhs.prev;
+        next = rhs.next;
+        item = rhs.item;
         return *this;
     }
 

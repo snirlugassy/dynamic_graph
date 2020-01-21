@@ -11,15 +11,13 @@
 #include <list>
 
 
-class Graph_Edge: public ListItem<Graph_Edge> {
+class Graph_Edge {
 private:
-    Graph_Node *_start;
-    Graph_Node *_end;
-    AdjacencyList::iterator *_start_adj_iterator;
-    AdjacencyList::iterator *_end_adj_iterator;
-    // The graph's edges list participation iterator
-    // In order to delete the edge in constant time
-    EdgeList::iterator *_graph_pos;
+    Graph_Node *_start = NULL;
+    Graph_Node *_end = NULL;
+    AdjacencyList::iterator *_start_adj_iterator = NULL;
+    AdjacencyList::iterator *_end_adj_iterator = NULL;
+    EdgeList::iterator *_graph_pos = NULL;
     void transpose();
     friend class Dynamic_Graph;
 public:
@@ -27,6 +25,8 @@ public:
         Graph_Node *start,
         Graph_Node *end
     );
+
+    virtual ~Graph_Edge();
 };
 
 

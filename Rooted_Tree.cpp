@@ -46,7 +46,7 @@ void Rooted_Tree::Print_By_Layer(std::ostream &stream) const {
         }
         q.pop_front();
         while (front) {
-            stream << front->get_id();
+            stream << front->get_id() << ",";
             Tree_Node *child = front->get_child();
             if (child != nullptr) {
                 q.push_back(child);
