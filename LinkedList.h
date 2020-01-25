@@ -11,16 +11,20 @@
 template <typename T>
 class LinkedList {
 private:
-    ListItem<T> *_first = NULL;
-    ListItem<T> *_last = NULL;
-    static inline ListItem<T> _null_iterator = ListItem<T>();
-    unsigned _length = 0;
+    ListItem<T> *_first;
+    ListItem<T> *_last;
+    static ListItem<T> _null_iterator;
+    unsigned _length;
 
 public:
     typedef ListItem<T> iterator;
     typedef const ListItem<T> const_iterator;
 
-    LinkedList() {};
+    LinkedList() {
+        _length = 0;
+        _first = NULL;
+        _last = NULL;
+    };
 
     virtual ~LinkedList() {
         while (_first != _last) {
@@ -147,7 +151,8 @@ public:
     }
 };
 
-
+template <typename T>
+ListItem<T> LinkedList<T>::_null_iterator = ListItem<T>();
 
 
 #endif //DS_ALGS_CODING_HW_LINKEDLIST_H
