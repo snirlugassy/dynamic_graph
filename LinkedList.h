@@ -51,26 +51,6 @@ public:
     void push_back(T &item) {
         ListItem<T> *_new_list_item = new ListItem<T>(item);
 
-//        if(_first == NULL) {
-//            // FIRST IS NULL
-//            _first = _new_list_item;
-//        } else {
-//            if(_last == NULL) {
-//                // FIRST IS NOT NULL AND LAST IS NULL
-//                _new_list_item->prev = _first;
-//                _last = _new_list_item;
-//                _first->next = _last;
-//            } else {
-//                // FIRST AND LAND ARE NOT NULL
-//                _new_list_item->prev = _last;
-//                _last->next = _new_list_item;
-//                _last = _new_list_item;
-//            }
-//        }
-//
-//        _length++;
-
-
         // in case the list is empty
         if (_first == NULL) {
             _first = _new_list_item;
@@ -80,10 +60,6 @@ public:
             _last->next = _new_list_item;
             // the next of the new first is the old first
             _new_list_item->prev = _last;
-
-//            if(_first == _last) {
-//                _first->next = _new_list_item;
-//            }
 
             _last = _new_list_item;
         }
@@ -104,6 +80,8 @@ public:
                 }
                 _length--;
             }
+        } else {
+            clear();
         }
     }
 
@@ -120,17 +98,25 @@ public:
                     _first->prev = NULL;
                 _length--;
             }
+        } else {
+            clear();
         }
     }
 
     void erase(iterator *item) {
-        if (item->prev != NULL)
-            item->prev->next = item->next;
-        if (item->next != NULL)
-            item->next->prev = item->prev;
-//        delete item;
-        _length--;
+        if (item == _first) {
+            pop_front();
+            return;
+        }
 
+        if (item == _last) {
+            pop_back();
+            return;
+        }
+
+        item->prev->next = item->next;
+        item->next->prev = item->prev;
+        this->_length--;
     }
 
     void insert_after(iterator &item);

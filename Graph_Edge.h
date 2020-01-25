@@ -26,7 +26,11 @@ public:
         Graph_Node *end
     );
 
-    virtual ~Graph_Edge();
+    ~Graph_Edge() {
+        _start = _end = NULL;
+        _start_adj_iterator = _end_adj_iterator = NULL;
+        _graph_pos = NULL;
+    };
 };
 
 

@@ -97,11 +97,6 @@ Rooted_Tree* Dynamic_Graph::SCC() const {
     // O(N+M)
     transpose();
 
-    // O(N)
-//    for (std::list<Graph_Node*>::const_iterator v = _nodes.begin(); v != _nodes.end(); v++) {
-//        (*v)->_pi = NULL;
-//    }
-
     // DFS on the transposed graph
     // DFS: O(N+M)
     while(!S.empty()) {
