@@ -28,7 +28,7 @@ public:
         _list->pop_front();
     }
 
-    T front() {
+    T front() const {
         return *(_list->begin());
     }
 
@@ -36,6 +36,9 @@ public:
         return _list->empty();
     }
 
+    unsigned length() {
+        return _list->length();
+    }
 };
 
 

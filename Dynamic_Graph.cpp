@@ -61,8 +61,8 @@ void Dynamic_Graph::Delete_Edge(Graph_Edge* edge) {
 
 void Dynamic_Graph::_dfs_visit(Stack<Graph_Node*> *_stack, Graph_Node* node) const {
     node->_color = GRAY;
-    LinkedList<Graph_Node*>::iterator v = node->_out_nodes->begin();
-    for (; *v != NULL; ++v) {
+    LinkedList<Graph_Node*>::iterator v = node->_out_nodes->end();
+    for (; *v != NULL; --v) {
         Graph_Node *adj = *v;
         if (adj->_color == WHITE) {
             _dfs_visit(_stack, adj);
@@ -74,8 +74,8 @@ void Dynamic_Graph::_dfs_visit(Stack<Graph_Node*> *_stack, Graph_Node* node) con
 
 void Dynamic_Graph::_dfs_unvisit(Graph_Node* node, Tree_Node* _scc_tree_node) const {
     node->_color = GRAY;
-    LinkedList<Graph_Node*>::iterator v = node->_out_nodes->begin();
-    for (; *v != NULL; ++v) {
+    LinkedList<Graph_Node*>::iterator v = node->_out_nodes->end();
+    for (; *v != NULL; --v) {
         Graph_Node *adj = *v;
         if(adj->_color == BLACK) {
             Tree_Node * _scc_component_node = _scc_tree_node->append_child(adj->_id);
@@ -100,7 +100,7 @@ Rooted_Tree* Dynamic_Graph::SCC() const {
 
     // First DFS traversal
     // DFS: O(N+M)
-    for (LinkedList<Graph_Node*>::iterator u = _nodes.begin(); *u != NULL; ++u) {
+    for (LinkedList<Graph_Node*>::iterator u = _nodes.end(); *u != NULL; --u) {
         Graph_Node *node = *u;
         if( node->_color == WHITE){
             this->_dfs_visit(&S, node);
@@ -168,9 +168,8 @@ Rooted_Tree* Dynamic_Graph::BFS(Graph_Node* source) const {
             Tree_Node *u_tree = Q_tree.front();
             Q_tree.dequeue();
 
-            LinkedList<Graph_Node*>::iterator v = u->_out_nodes->begin();
-            LinkedList<Graph_Node*>::iterator v_test_prev = v;
-            for (; *v != NULL; v_test_prev = v, ++v) {
+            LinkedList<Graph_Node*>::iterator v = u->_out_nodes->end();
+            for (; *v != NULL; --v) {
                 Graph_Node *node = *v;
                 if( node->_color == WHITE){
                     node->_color = GRAY;

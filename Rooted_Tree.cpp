@@ -2,8 +2,9 @@
 // Created by snirlugassy on 12/20/19.
 //
 #include <iostream>
-#include <list>
 #include "Rooted_Tree.h"
+#include "Queue.h"
+#include <cstddef>
 
 Rooted_Tree::Rooted_Tree() {}
 Rooted_Tree::Rooted_Tree(Tree_Node *root):_root(root) {}
@@ -32,9 +33,9 @@ void Rooted_Tree::preorder_traverse(std::ostream &stream, Tree_Node* node) {
 
 void Rooted_Tree::Print_By_Layer(std::ostream &stream) const {
     // TODO: implement queue
-    std::list<Tree_Node*> q;
-
-    q.push_front(this->_root);
+    Queue<Tree_Node*> q;
+    Tree_Node *_printed_root = this->_root;
+    q.enqueue(_printed_root);
 
     unsigned last_height = 0;
 
@@ -43,13 +44,18 @@ void Rooted_Tree::Print_By_Layer(std::ostream &stream) const {
         if (front->height != last_height) {
             stream << "\n";
             last_height = front->height;
+        } else {
+            if(front->get_parent())
+                stream << ",";
         }
-        q.pop_front();
-        while (front) {
-            stream << front->get_id() << ",";
+        q.dequeue();
+        while (front != NULL) {
+            stream << front->get_id();
+            if(front->get_sibling())
+                stream << ",";
             Tree_Node *child = front->get_child();
             if (child != NULL) {
-                q.push_back(child);
+                q.enqueue(child);
             }
             front = front->get_sibling();
         }
