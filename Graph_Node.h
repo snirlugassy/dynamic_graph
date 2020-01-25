@@ -12,8 +12,8 @@
 class Graph_Node {
 private:
     // TODO: chage to LinkedList
-    AdjacencyList _out_nodes;
-    AdjacencyList _in_nodes;
+    AdjacencyList *_out_nodes = NULL;
+    AdjacencyList *_in_nodes = NULL;
     // The graph's nodes list participation iterator
     // In order to delete the node in constant time
     NodeList::iterator* _graph_pos = NULL;

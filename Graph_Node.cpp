@@ -4,18 +4,23 @@
 
 #include "Graph_Node.h"
 
-Graph_Node::Graph_Node(unsigned int id): _id(id) {}
-Graph_Node::~Graph_Node() {
-    while(!_out_nodes.empty()){
-//        delete *_out_nodes.begin();
-        _out_nodes.pop_front();
-    }
-    while(!_in_nodes.empty()) {
-//        delete *_in_nodes.begin();
-        _in_nodes.pop_front();
-    }
+Graph_Node::Graph_Node(unsigned int id): _id(id) {
+    _in_nodes = new AdjacencyList();
+    _out_nodes = new AdjacencyList();
+}
 
-    if(_graph_pos) delete _graph_pos;
+Graph_Node::~Graph_Node() {
+//    while(!_out_nodes.empty()){
+////        delete *_out_nodes.begin();
+//        _out_nodes.pop_front();
+//    }
+//    while(!_in_nodes.empty()) {
+////        delete *_in_nodes.begin();
+//        _in_nodes.pop_front();
+//    }
+    delete _in_nodes;
+    delete _out_nodes;
+    delete _graph_pos;
 }
 
 //Graph_Node& Graph_Node::operator=(const Graph_Node &rhs) {
@@ -28,17 +33,17 @@ Graph_Node::~Graph_Node() {
 //}
 
 void Graph_Node::transpose() {
-    AdjacencyList temp = _out_nodes;
+    AdjacencyList * temp = _out_nodes;
     _out_nodes = _in_nodes;
     _in_nodes = temp;
 }
 
 unsigned Graph_Node::Get_out_Degree() const {
-    return _out_nodes.length();
+    return _out_nodes->length();
 }
 
 unsigned Graph_Node::Get_in_Degree() const {
-    return _in_nodes.length();
+    return _in_nodes->length();
 }
 
 unsigned Graph_Node::Get_key() const {

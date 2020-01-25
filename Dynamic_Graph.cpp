@@ -25,11 +25,11 @@ void Dynamic_Graph::Delete_Node(Graph_Node* node) {
 Graph_Edge* Dynamic_Graph::Insert_Edge(Graph_Node* from, Graph_Node* to) {
     Graph_Edge *edge = new Graph_Edge(from, to);
 
-    from->_out_nodes.push_back(to);
-    to->_in_nodes.push_back(from);
+    from->_out_nodes->push_back(to);
+    to->_in_nodes->push_back(from);
 
-    edge->_start_adj_iterator = &(from->_out_nodes.end());
-    edge->_end_adj_iterator = &(to->_in_nodes.end());
+    edge->_start_adj_iterator = &(from->_out_nodes->end());
+    edge->_end_adj_iterator = &(to->_in_nodes->end());
 
     _edges.push_back(edge);
 
@@ -39,15 +39,15 @@ Graph_Edge* Dynamic_Graph::Insert_Edge(Graph_Node* from, Graph_Node* to) {
 };
 
 void Dynamic_Graph::Delete_Edge(Graph_Edge* edge) {
-    edge->_start->_out_nodes.erase(edge->_start_adj_iterator);
-    edge->_end->_in_nodes.erase(edge->_end_adj_iterator);
+    edge->_start->_out_nodes->erase(edge->_start_adj_iterator);
+    edge->_end->_in_nodes->erase(edge->_end_adj_iterator);
     _edges.erase(edge->_graph_pos);
     delete edge;
 }
 
 void Dynamic_Graph::_dfs_visit(Stack<Graph_Node*> *_stack, Graph_Node* node) const {
     node->_color = GRAY;
-    LinkedList<Graph_Node*>::iterator v = node->_out_nodes.end();
+    LinkedList<Graph_Node*>::iterator v = node->_out_nodes->end();
     for (; *v != NULL; --v) {
         Graph_Node *adj = *v;
         if (adj->_color == WHITE) {
@@ -60,7 +60,7 @@ void Dynamic_Graph::_dfs_visit(Stack<Graph_Node*> *_stack, Graph_Node* node) con
 
 void Dynamic_Graph::_dfs_unvisit(Graph_Node* node, Tree_Node* _scc_tree_node) const {
     node->_color = GRAY;
-    LinkedList<Graph_Node*>::iterator v = node->_out_nodes.end();
+    LinkedList<Graph_Node*>::iterator v = node->_out_nodes->end();
     for (; *v != NULL; --v) {
         Graph_Node *adj = *v;
         if(adj->_color == BLACK) {
@@ -159,8 +159,9 @@ Rooted_Tree* Dynamic_Graph::BFS(Graph_Node* source) const {
             Tree_Node *u_tree = Q_tree.front();
             Q_tree.dequeue();
 
-            LinkedList<Graph_Node*>::iterator v = u->_out_nodes.begin();
-            for (; *v != NULL; ++v) {
+            LinkedList<Graph_Node*>::iterator v = u->_out_nodes->begin();
+            LinkedList<Graph_Node*>::iterator v_test_prev = v;
+            for (; *v != NULL; v_test_prev = v, ++v) {
                 Graph_Node *node = *v;
                 if( node->_color == WHITE){
                     node->_color = GRAY;

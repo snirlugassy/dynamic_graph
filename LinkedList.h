@@ -26,8 +26,10 @@ public:
         while (_first != _last) {
             pop_back();
         }
-        if (_first != NULL)
+        if (_first != NULL) {
             delete _first;
+            _first = NULL;
+        }
     };
 
     bool empty() const {
@@ -38,8 +40,9 @@ public:
         while (_first != _last) {
             pop_back();
         }
-        if (_first != NULL)
+        if (_first != NULL) {
             delete _first;
+        }
         _first = NULL;
         _last = NULL;
         _length = 0;
@@ -109,7 +112,7 @@ public:
                 clear();
             } else {
                 iterator *_new_first = _first->next;
-                delete _first;
+//                delete _first;
                 _first = _new_first;
                 _first->prev = NULL;
                 _length--;
@@ -122,8 +125,9 @@ public:
             item->prev->next = item->next;
         if (item->next != NULL)
             item->next->prev = item->prev;
-        delete item;
+//        delete item;
         _length--;
+
     }
 
     void insert_after(iterator &item);

@@ -22,9 +22,16 @@ void Graph_Edge::transpose() {
 }
 
 Graph_Edge::~Graph_Edge() {
-    if(_start) delete _start;
-    if(_end) delete _end;
-    if(_start_adj_iterator) delete _start_adj_iterator;
-    if(_end_adj_iterator) delete _end_adj_iterator;
-    if(_graph_pos) delete _graph_pos;
+//    if(_start != NULL) delete _start;
+//    if(_end != NULL) delete _end;
+
+//    if(_start != NULL) {
+//        delete _start_adj_iterator;
+//    }
+//    if(_end_adj_iterator != NULL) {
+//        delete _end_adj_iterator;
+//    };
+//    if(_graph_pos != NULL) {
+//        delete _graph_pos;
+//    }
 }
