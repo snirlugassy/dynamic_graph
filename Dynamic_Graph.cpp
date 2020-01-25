@@ -7,6 +7,20 @@
 #include "typedefs.h"
 
 
+Dynamic_Graph::~Dynamic_Graph() {
+    LinkedList<Graph_Node*>::iterator _garbage_node_iter = _nodes.begin();
+    for(; *_garbage_node_iter != NULL; ++_garbage_node_iter) {
+        Graph_Node* _garbage = *(_garbage_node_iter);
+        delete _garbage;
+    }
+
+    LinkedList<Graph_Edge*>::iterator _garbage_edge_iter = _edges.begin();
+    for(; *_garbage_edge_iter != NULL; ++_garbage_edge_iter) {
+        Graph_Edge* _garbage = *(_garbage_edge_iter);
+        delete _garbage;
+    }
+}
+
 Graph_Node* Dynamic_Graph::Insert_Node(unsigned node_key) {
     Graph_Node *node = new Graph_Node(node_key);
     _nodes.push_back(node);

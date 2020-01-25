@@ -15,7 +15,6 @@ private:
     ListItem<T> *_last;
     static ListItem<T> _null_iterator;
     unsigned _length;
-
 public:
     typedef ListItem<T> iterator;
     typedef const ListItem<T> const_iterator;
