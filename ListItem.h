@@ -18,7 +18,7 @@ public:
 
     ListItem<T>() {};
     ListItem<T>(T &item): item(item) {};
-    ~ListItem<T>(){};
+    ~ListItem<T>() {};
 
     // Referencing
     T operator*() const {  return item;  }

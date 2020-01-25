@@ -28,8 +28,8 @@ public:
         }
         if (_first != NULL) {
             delete _first;
-            _first = NULL;
         }
+        _first = _last = NULL;
     };
 
     bool empty() const {
@@ -99,7 +99,9 @@ public:
                 iterator * _new_last = _last->prev;
                 delete _last;
                 _last = _new_last;
-                _last->next = NULL;
+                if (_last != NULL) {
+                    _last->next = NULL;
+                }
                 _length--;
             }
         }
@@ -112,9 +114,10 @@ public:
                 clear();
             } else {
                 iterator *_new_first = _first->next;
-//                delete _first;
+                delete _first;
                 _first = _new_first;
-                _first->prev = NULL;
+                if (_new_first != NULL)
+                    _first->prev = NULL;
                 _length--;
             }
         }
