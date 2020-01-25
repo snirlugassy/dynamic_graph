@@ -22,8 +22,8 @@ private:
     void _dfs();
     void transpose() const;
 public:
-    Dynamic_Graph() = default;
-    ~Dynamic_Graph() = default;
+    Dynamic_Graph() {};
+    ~Dynamic_Graph() {};
     Graph_Node* Insert_Node(unsigned node_key);
     void Delete_Node(Graph_Node* node);
     Graph_Edge* Insert_Edge(Graph_Node* from, Graph_Node* to);
