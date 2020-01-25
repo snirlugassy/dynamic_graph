@@ -20,7 +20,7 @@ Graph_Node::~Graph_Node() {
 //    }
     delete _in_nodes;
     delete _out_nodes;
-    delete _graph_pos;
+//    delete _graph_pos;
 }
 
 //Graph_Node& Graph_Node::operator=(const Graph_Node &rhs) {

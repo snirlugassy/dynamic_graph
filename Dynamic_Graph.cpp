@@ -61,8 +61,8 @@ void Dynamic_Graph::Delete_Edge(Graph_Edge* edge) {
 
 void Dynamic_Graph::_dfs_visit(Stack<Graph_Node*> *_stack, Graph_Node* node) const {
     node->_color = GRAY;
-    LinkedList<Graph_Node*>::iterator v = node->_out_nodes->end();
-    for (; *v != NULL; --v) {
+    LinkedList<Graph_Node*>::iterator v = node->_out_nodes->begin();
+    for (; *v != NULL; ++v) {
         Graph_Node *adj = *v;
         if (adj->_color == WHITE) {
             _dfs_visit(_stack, adj);
@@ -74,8 +74,8 @@ void Dynamic_Graph::_dfs_visit(Stack<Graph_Node*> *_stack, Graph_Node* node) con
 
 void Dynamic_Graph::_dfs_unvisit(Graph_Node* node, Tree_Node* _scc_tree_node) const {
     node->_color = GRAY;
-    LinkedList<Graph_Node*>::iterator v = node->_out_nodes->end();
-    for (; *v != NULL; --v) {
+    LinkedList<Graph_Node*>::iterator v = node->_out_nodes->begin();
+    for (; *v != NULL; ++v) {
         Graph_Node *adj = *v;
         if(adj->_color == BLACK) {
             Tree_Node * _scc_component_node = _scc_tree_node->append_child(adj->_id);
