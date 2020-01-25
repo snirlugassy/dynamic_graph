@@ -5,8 +5,6 @@
 #ifndef DS_ALGS_CODING_HW_TYPEDEFS_H
 #define DS_ALGS_CODING_HW_TYPEDEFS_H
 
-#include <list>
-
 #include "LinkedList.h"
 
 #define WHITE 0

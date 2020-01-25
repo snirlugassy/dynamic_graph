@@ -8,7 +8,6 @@
 #include "Graph_Node.h"
 #include "ListItem.h"
 #include "typedefs.h"
-#include <list>
 
 
 class Graph_Edge {
