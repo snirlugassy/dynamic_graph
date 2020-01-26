@@ -11,11 +11,8 @@
 
 class Graph_Node {
 private:
-    // TODO: chage to LinkedList
     AdjacencyList *_out_nodes = NULL;
     AdjacencyList *_in_nodes = NULL;
-    // The graph's nodes list participation iterator
-    // In order to delete the node in constant time
     NodeList::iterator* _graph_pos = NULL;
     unsigned int _id;
     // DFS variables
@@ -23,11 +20,10 @@ private:
     void transpose();
     friend class Dynamic_Graph;
 
-public: //TODO: make some members protected
+public:
     explicit Graph_Node(unsigned int id);
     ~Graph_Node();
 
-    Graph_Node& operator=(const Graph_Node &rhs);
     bool operator==(const Graph_Node &rhs) const;
     bool operator!=(const Graph_Node &rhs) const;
 

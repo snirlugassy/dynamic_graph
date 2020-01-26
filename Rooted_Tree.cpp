@@ -32,7 +32,6 @@ void Rooted_Tree::preorder_traverse(std::ostream &stream, Tree_Node* node) {
 }
 
 void Rooted_Tree::Print_By_Layer(std::ostream &stream) const {
-    // TODO: implement queue
     Queue<Tree_Node*> q;
     Tree_Node *_printed_root = this->_root;
     q.enqueue(_printed_root);

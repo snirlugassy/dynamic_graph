@@ -89,7 +89,6 @@ Rooted_Tree* Dynamic_Graph::SCC() const {
     Tree_Node *_root = new Tree_Node(0);
     Rooted_Tree *_scc = new Rooted_Tree(_root);
 
-    // TODO: create stack
     Stack<Graph_Node*> S;
 
     // Initialize the graph nodes
@@ -150,6 +149,7 @@ Rooted_Tree* Dynamic_Graph::BFS(Graph_Node* source) const {
         Queue<Graph_Node*> Q;
         Queue<Tree_Node*> Q_tree;
 
+        // O(N)
         for (LinkedList<Graph_Node*>::iterator v = _nodes.begin(); *v != NULL; ++v) {
             (*v)->_color = WHITE;
         }
@@ -160,6 +160,7 @@ Rooted_Tree* Dynamic_Graph::BFS(Graph_Node* source) const {
         Q.enqueue(source);
         Q_tree.enqueue(_bfs_tree_root);
 
+        // O(N+M)
         while(!Q.empty()) {
             // Dequeue
             Graph_Node * u = Q.front();
@@ -169,6 +170,7 @@ Rooted_Tree* Dynamic_Graph::BFS(Graph_Node* source) const {
             Q_tree.dequeue();
 
             LinkedList<Graph_Node*>::iterator v = u->_out_nodes->end();
+            // O(Adj(u))
             for (; *v != NULL; --v) {
                 Graph_Node *node = *v;
                 if( node->_color == WHITE){

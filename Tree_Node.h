@@ -14,7 +14,6 @@ private:
     Tree_Node* _left_child = NULL;
     Tree_Node* _right_sibling = NULL;
 public:
-    // TODO: assign height
     unsigned int height;
     Tree_Node(unsigned int id);
     Tree_Node(unsigned int id, Tree_Node* parent);
